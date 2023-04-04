@@ -3,7 +3,7 @@
 # Redundancy function -----------------------------------------------------
 
 redundancy <- function(df, corr = 0.99) {
-  cor_d <- cor(df)
+  cor_d <- cor(df, use = "na.or.complete")
   
   p <- dim(cor_d)[1]
   
