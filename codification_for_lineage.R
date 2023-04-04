@@ -1,5 +1,8 @@
+library(tidyverse)
+
 d <- read.table('subset.txt', header = T)
 
+d <- as_tibble(t(d))
 
 sub_gen <- function(x) {
   x |>
@@ -12,6 +15,9 @@ sub_gen <- function(x) {
   ifelse(x == gen_major_freq, 1, 0)
 }
 
-coded_d <- apply(d, 1, sub_gen)
+coded_d1 <- apply(d, 2, sub_gen)
 
-View(coded_d)
+
+coded_d2 <- map_df(d, sub_gen)
+
+
