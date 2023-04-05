@@ -82,5 +82,5 @@ freq_alle <- function(x) {
 }
 
 
-map_dfr(d, freq_alle, .id = 'SNPs')
+freq_alle_df <- map_dfr(d, freq_alle, .id = 'SNPs')
 
